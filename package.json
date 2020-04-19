@@ -4,5 +4,8 @@
   "description": "a moderation and management bot for Overlake Composite Squadron's Discord server",
   "main": "index.js",
   "repository": "git@github.com:randy-halim/overlake-mod-bot.git",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^12.2.0"
+  }
 }
