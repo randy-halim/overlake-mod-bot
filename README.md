@@ -12,7 +12,7 @@ A moderation and management bot for Overlake's Discord server
 - [ ] clean up code
 
 # checkout and test
-Clone this repositry to your computer:
+Clone this repository to your computer:
 ```bash
 git clone https://github.com/randy-halim/overlake-mod-bot.git
 ```
