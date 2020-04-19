@@ -3,13 +3,13 @@ A moderation and management bot for Overlake's Discord server
 
 # to do
 - [x] start documentation
-- [] auto role reassignment
+- [ ] auto role reassignment
 - [x] audit message creation
 - [x] audit message edit
-- [] audit message deletion
-- [] configure log to be 'archived' every so often to prevent log overwrite every time the bot starts
-- [] beautify logging of bot actions
-- [] clean up code
+- [ ] audit message deletion
+- [ ] configure log to be 'archived' every so often to prevent log overwrite every time the bot starts
+- [ ] beautify logging of bot actions
+- [ ] clean up code
 
 # checkout and test
 Clone this repositry to your computer:
