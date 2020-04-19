@@ -4,6 +4,10 @@ require('dotenv').config();
 // moment is a package to format Date() objects.
 const moment = require('moment');
 
+// applicationinsights for Azure
+const appInsights = require('applicationinsights');
+appInsights.setup(process.env.insightsInstrumentationKey).start();
+
 // node-schedule is a package to schedule 'crontabs' in our Node application.
 const crontab = require('node-schedule');
 
