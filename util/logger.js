@@ -26,5 +26,5 @@ module.exports = {
     },
     log: (text) => {
         fileStream.write(text);
-    }
-}
+    },
+};
