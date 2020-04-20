@@ -1,48 +1,23 @@
-// require and config dotenv ASAP
+global.__rootdir = __dirname;
+// Read environment variables
 require('dotenv').config();
 
-// also extract the prefix
-const prefix = process.env.commandPrefix;
-
-// preload DiscordJS wrapper and client
 const Discord = require('discord.js');
 const client = new Discord.Client();
-
-// preload filesystem
 const fs = require('fs');
-let fileStream;
+const path = require('path');
+const logger = require(__rootdir + '/util/logger.js');
 
-client.once('ready', () => {
-    console.log('Ready!');
-    fs.writeFile('./log/latest.txt', Date(), function(err) {
-        if (err) return console.error(err);
-        console.log('log file should exist');
-    });
-    fileStream = fs.createWriteStream('./log/latest.txt');
-    fileStream.on('close', fs.close);
-    fileStream.on('error', fs.close);
-});
+const prefix = process.env.COMMAND_PREFIX;
 
-client.on('message', message => {
-    if (message.content === `${prefix}ping`) {
-        message.reply(' Pong! ' + Date());
-    }
-});
+// Begin logging stream
+logger.init();
 
-/*
-   !!!
-   server message logging
-   !!!
-*/
-// case: a message is created (sent) to the server in ANY channel
-client.on('message', message => {
-    fileStream.write(`${message.member.displayName} in channel ${message.channel} at ${Date()}:\n${message.content}\n\n`);
-    console.log('message logged to /log/latest.txt');
-});
-// case: a message is edited to the server in ANY channel
-client.on('messageUpdate', function(oldMessage, newMessage) {
-    fileStream.write(`${oldMessage.member.displayName} in channel ${oldMessage.channel} at ${Date()} edited a message:\nold message:\n${oldMessage}\n\nnew message:\n${newMessage}\n\n`);
-});
+// Setup event handler synchronously 
+const files = fs.readdirSync('./events/')
+for (const file of files) {
+    const event = path.parse(file).name;
+    client.on(event, require(path.join(__rootdir, 'events', file)));
+}
 
-
-client.login(process.env.discordAPIKey);
+client.login(process.env.DISCORD_TOKEN);
