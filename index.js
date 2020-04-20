@@ -1,6 +1,6 @@
 global.__rootdir = __dirname;
 // Read environment variables
-require('dotenv').config({ path: `${__rootdir}/data/` });
+require('dotenv').config({ path: '/data/.env' });
 
 const Discord = require('discord.js');
 const client = new Discord.Client();
@@ -25,20 +25,20 @@ const moment = require('moment');
 (async () => {
     let data;
     try {
-        data = await fs.promises.readFile('./data/log/latest.txt');
+        data = await fs.promises.readFile('/data/log/latest.txt');
     } catch (err) {
         console.error(err);
         return;
     }
     const timestamp = moment().format();
     try {
-        await fs.promises.writeFile(`./data/log/${timestamp}.txt`, data);
-        await fs.promises.writeFile('./data/log/latest.txt', null);
+        await fs.promises.writeFile(`/data/log/${timestamp}.txt`, data);
+        await fs.promises.writeFile('/data/log/latest.txt', null);
     } catch (err) {
         console.error(err);
         return;
     }
-    console.log(`log has been dumped into ./data/log/${timestamp}`);
+    console.log(`log has been dumped into /data/log/${timestamp}`);
 })();
 
 client.login(process.env.DISCORD_TOKEN);
