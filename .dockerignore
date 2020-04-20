@@ -5,3 +5,5 @@ npm-debug.log
 README.md
 yarn.lock
 .gitignore
+
+container-data
