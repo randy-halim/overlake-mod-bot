@@ -5,20 +5,20 @@ const moment = require('moment');
 let fileStream;
 module.exports = {
     init: () => {
-        fileStream = fs.createWriteStream('./log/latest.txt', {flags:'w+'});
+        fileStream = fs.createWriteStream('./log/latest.txt', { flags:'w+' });
         schedule.scheduleJob('Hourly Empty Log', '0 * * * *', async () => {
             let data;
             try {
-                data = await fs.promises.readFile('./log/latest.txt')
+                data = await fs.promises.readFile('./log/latest.txt');
             } catch (err) {
                 console.error(err);
                 return;
             }
-            let timestamp = moment().format()
+            const timestamp = moment().format();
             try {
-                await fs.promises.writeFile(`./log/${timestamp}.txt`, data)
+                await fs.promises.writeFile(`./log/${timestamp}.txt`, data);
                 fileStream.close();
-                fileStream = fs.createWriteStream('./log/latest.txt', {flags:'w+'});
+                fileStream = fs.createWriteStream('./log/latest.txt', { flags:'w+' });
             } catch (err) {
                 console.error(err);
                 return;

@@ -30,9 +30,9 @@ const moment = require('moment');
         console.error(err);
         return;
     }
-    let timestamp = moment().format()
+    const timestamp = moment().format();
     try {
-        await fs.promises.writeFile(`./log/${timestamp}.txt`, data)
+        await fs.promises.writeFile(`./log/${timestamp}.txt`, data);
         await fs.promises.writeFile('./log/latest.txt', null);
     } catch (err) {
         console.error(err);
