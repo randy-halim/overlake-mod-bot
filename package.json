@@ -6,8 +6,10 @@
   "repository": "git@github.com:randy-halim/overlake-mod-bot.git",
   "license": "MIT",
   "dependencies": {
+    "applicationinsights": "^1.7.4",
     "discord.js": "^12.2.0",
     "dotenv": "^8.2.0",
+    "moment": "^2.24.0",
     "node-schedule": "^1.3.2"
   }
 }
