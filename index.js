@@ -20,4 +20,25 @@ for (const file of files) {
     client.on(event, require(path.join(__rootdir, 'events', file)));
 }
 
+const moment = require('moment');
+
+(async () => {
+    let data;
+    try {
+        data = await fs.promises.readFile('./log/latest.txt')
+    } catch (err) {
+        console.error(err);
+        return;
+    }
+    let timestamp = moment().format()
+    try {
+        await fs.promises.writeFile(`./log/${timestamp}.txt`, data)
+        await fs.promises.writeFile('./log/latest.txt', null);
+    } catch (err) {
+        console.error(err);
+        return;
+    }
+    console.log(`log has been dumped into ./log/${timestamp}`);
+})();
+
 client.login(process.env.DISCORD_TOKEN);
