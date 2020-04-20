@@ -23,7 +23,7 @@ Install required packages:
 yarn install
 ```
 
-Create a `.env` file (enviroment file) using the following code below. Replace the `DISCORD_TOKEN` with your bot's API key.
+Create a `.env` file (enviroment file) inside `container-data` using the following code below. Replace the `DISCORD_TOKEN` with your bot's API key.
 ```txt
 DISCORD_TOKEN=YOUR_SECRET_BOT_KEY_HERE
 COMMAND_PREFIX=!
