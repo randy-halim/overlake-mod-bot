@@ -8,8 +8,8 @@ const fs = require('fs');
 const path = require('path');
 const logger = require(__rootdir + '/util/logger.js');
 
-// Begin logging stream
-logger.init();
+// Begin periodic logging
+logger.begin();
 
 // Setup event handler synchronously
 const files = fs.readdirSync(__rootdir + '/events/');

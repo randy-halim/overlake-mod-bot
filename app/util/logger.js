@@ -2,10 +2,16 @@ const fs = require('fs');
 const schedule = require('node-schedule');
 const moment = require('moment');
 const logPath = __rootdir + '/../logs';
-let fileStream;
+
+//Setup write stream
+const fileStream = fs.createWriteStream(`${logPath}/latest.txt`, { flags:'w+' });
+
+
 module.exports = {
-    init: () => {
-        fileStream = fs.createWriteStream(`${logPath}/latest.txt`, { flags:'w+' });
+    log: (text) => {
+        fileStream.write(text);
+    },
+    begin: () => {
         schedule.scheduleJob('Hourly Empty Log', '0 * * * *', async () => {
             let data;
             try {
@@ -25,8 +31,5 @@ module.exports = {
             }
             console.log(`log has been dumped into ${logPath}/${timestamp}`);
         });
-    },
-    log: (text) => {
-        fileStream.write(text);
-    },
+    }
 };
