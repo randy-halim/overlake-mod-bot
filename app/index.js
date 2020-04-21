@@ -1,14 +1,12 @@
 global.__rootdir = __dirname;
 // Read environment variables
-require('dotenv').config();
+require('dotenv').config('.env');
 
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require('fs');
 const path = require('path');
 const logger = require(__rootdir + '/util/logger.js');
-
-const prefix = process.env.COMMAND_PREFIX;
 
 // Begin logging stream
 logger.init();

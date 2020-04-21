@@ -1,6 +1,7 @@
 app/node_modules
 app/yarn.lock
+app/.env*
 
 .eslintrc.json
-README.md
 .gitignore
+README.md
