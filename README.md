@@ -13,24 +13,24 @@ A moderation and management bot for Overlake's Discord server
 
 # checkout and test
 Clone this repository to your computer:
-```zsh
+```sh
 git clone https://github.com/randy-halim/overlake-mod-bot.git
 ```
 (or use your preferred method of cloning a repo).
 
 Install required packages:
-```zsh
+```sh
 yarn install
 ```
 
-Create a `.env` file (enviroment file) using the following code below. Replace the `DISCORD_TOKEN` with your bot's API key.
+Create a `.env` file (enviroment file) inside `container-data` using the following code below. Replace the `DISCORD_TOKEN` with your bot's API key.
 ```txt
 DISCORD_TOKEN=YOUR_SECRET_BOT_KEY_HERE
 COMMAND_PREFIX=!
 ```
 
 Run `node`:
-```zsh
+```sh
 node .
 ```
 You should see a message that says `Ready!` if successful.

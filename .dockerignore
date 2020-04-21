@@ -1,9 +1,6 @@
-node_modules
-npm-debug.log
+app/node_modules
+app/yarn.lock
 
 .eslintrc.json
 README.md
-yarn.lock
 .gitignore
-
-container-data
