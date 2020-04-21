@@ -1,6 +1,6 @@
 global.__rootdir = __dirname;
 // Read environment variables
-require('dotenv').config('.env');
+require('dotenv').config();
 
 const Discord = require('discord.js');
 const client = new Discord.Client();
