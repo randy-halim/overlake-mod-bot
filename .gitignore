@@ -1,8 +1,8 @@
 # ignore the ".env" enviroment file
-app/.env
+.env
 
 # ignore the log files, the bot makes them
-/log/*
+logs/*
 
 # ignore node modules. if you're looking for them, use your favorite package manager to install them.
-app/node_modules/*
+/node_modules/*
