@@ -3,8 +3,8 @@ const schedule = require('node-schedule');
 const moment = require('moment');
 const logPath = __rootdir + '/../logs';
 
-//Setup write stream
-const fileStream = fs.createWriteStream(`${logPath}/latest.txt`, { flags:'w+' });
+// Setup write stream
+let fileStream = fs.createWriteStream(`${logPath}/latest.txt`, { flags:'w+' });
 
 
 module.exports = {
@@ -31,5 +31,5 @@ module.exports = {
             }
             console.log(`log has been dumped into ${logPath}/${timestamp}`);
         });
-    }
+    },
 };
