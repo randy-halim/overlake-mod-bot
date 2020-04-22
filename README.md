@@ -29,8 +29,6 @@ DISCORD_TOKEN=YOUR_SECRET_BOT_KEY_HERE
 COMMAND_PREFIX=!
 ```
 
-Run `node`:
-```sh
-node .
-```
+Run `./build.sh` and then `./run.sh` and then paste in the Discord bot key
+
 You should see a message that says `Ready!` if successful.
