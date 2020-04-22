@@ -2,6 +2,7 @@
 .env
 
 # ignore the log files, the bot makes them
+/logs/*
 
 # ignore node modules. if you're looking for them, use your favorite package manager to install them.
 /node_modules/*
