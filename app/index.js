@@ -1,16 +1,24 @@
 global.__rootdir = __dirname;
-// Read environment variables
+
+// Read environment variables for development
 require('dotenv').config();
 
 const fs = require('fs');
 const path = require('path');
 
 const logger = require(__rootdir + '/util/logger.js');
-const client = require(__rootdir + '/util/client.js');
+const { client, commands } = require(__rootdir + '/util/client-wrapper.js');
+
+// Dynamically load commands
+const commandFiles = fs.readdirSync(__rootdir + '/commands/');
+for (const file of commandFiles) {
+    const command = require(path.join(__rootdir, 'commands', file));
+    commands.set(command.name, command.run);
+}
 
 // Setup event handler synchronously by parsing each .js file in ../app/events/
-const files = fs.readdirSync(__rootdir + '/events/');
-for (const file of files) {
+const eventFiles = fs.readdirSync(__rootdir + '/events/');
+for (const file of eventFiles) {
     const event = path.parse(file).name;
     client.on(event, require(path.join(__rootdir, 'events', file)));
 }

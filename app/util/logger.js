@@ -4,7 +4,7 @@ const moment = require('moment');
 const logPath = __rootdir + '/../logs';
 
 // Setup write stream
-let fileStream = fs.createWriteStream(`${logPath}/latest.txt`, { flags:'w+' });
+let fileStream = fs.createWriteStream(`${logPath}/latest.txt`, { flags:'w' });
 
 
 module.exports = {
@@ -24,7 +24,7 @@ module.exports = {
             try {
                 await fs.promises.writeFile(`${logPath}/${timestamp}.txt`, data);
                 fileStream.close();
-                fileStream = fs.createWriteStream(`${logPath}/latest.txt`, { flags:'w+' });
+                fileStream = fs.createWriteStream(`${logPath}/latest.txt`, { flags:'w' });
             } catch (err) {
                 console.error(err);
                 return;
