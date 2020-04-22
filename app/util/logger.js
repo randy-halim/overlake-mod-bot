@@ -15,7 +15,7 @@ module.exports = {
         schedule.scheduleJob('Hourly Empty Log', '0 * * * *', async () => {
             let data;
             try {
-                data = await fs.promises.readFile(logPath + 'latest.txt');
+                data = await fs.promises.readFile(`${logPath}/latest.txt`);
             } catch (err) {
                 console.error(err);
                 return;

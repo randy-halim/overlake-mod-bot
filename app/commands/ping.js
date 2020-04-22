@@ -1,6 +1,7 @@
 module.exports = {
     name: 'ping',
-    usage: 'ping',
+    desc: 'Ping command',
+    usage: '',
     run: (message) => {
         message.reply('pong');
     },
