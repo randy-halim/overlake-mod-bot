@@ -1,8 +1,5 @@
 const logger = require(__rootdir + '/util/logger.js');
-const { commands } = require(__rootdir + '/util/client-wrapper.js');
-
-// This will eventually go into the config file(s)
-const prefix = '!';
+const { commands, prefix } = require(__rootdir + '/util/client-wrapper.js');
 
 module.exports = (message) => {
     logger.log(`${message.member.displayName} in channel ${message.channel} at ${Date()}:\n${message.content}\n\n`);
@@ -14,6 +11,6 @@ module.exports = (message) => {
     if (!commands.has(command)) {
         return;
     }
-    commands.get(command)(message);
+    commands.get(command).run(message);
 };
 

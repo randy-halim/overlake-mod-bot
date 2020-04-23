@@ -13,7 +13,7 @@ const { client, commands } = require(__rootdir + '/util/client-wrapper.js');
 const commandFiles = fs.readdirSync(__rootdir + '/commands/');
 for (const file of commandFiles) {
     const command = require(path.join(__rootdir, 'commands', file));
-    commands.set(command.name, command.run);
+    commands.set(command.name, command);
 }
 
 // Setup event handler synchronously by parsing each .js file in ../app/events/
