@@ -7,5 +7,5 @@ const prefix = '!';
 module.exports = {
     client,
     commands,
-    prefix
+    prefix,
 };
