@@ -5,4 +5,4 @@
 /logs/*
 
 # ignore node modules. if you're looking for them, use your favorite package manager to install them.
-# /app/node_modules/*
+/app/node_modules/*
