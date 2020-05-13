@@ -1,4 +1,6 @@
 const logger = require(__rootdir + '/util/logger.js');
+const { prefix, commands } = require(__rootdir + '/util/client-wrapper.js');
+
 module.exports = (message) => {
     logger.log(`${message.member.displayName} in channel ${message.channel} at ${Date()}:\n${message.content}\n\n`);
 
