@@ -7,7 +7,7 @@ module.exports = (message) => {
     if (!message.content.startsWith(prefix)) {
         return;
     }
-    const command = message.content.substring(1);
+    const command = message.content.split(' ')[0].substring(1);
     if (!commands.has(command)) {
         return;
     }
