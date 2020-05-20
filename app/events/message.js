@@ -1,5 +1,5 @@
 const logger = require(__rootdir + '/util/logger.js');
-const { commands, prefix } = require(__rootdir + '/util/client-wrapper.js');
+const { prefix, commands } = require(__rootdir + '/util/client-wrapper.js');
 
 module.exports = (message) => {
     logger.log(`${message.member.displayName} in channel ${message.channel} at ${Date()}:\n${message.content}\n\n`);
@@ -7,7 +7,7 @@ module.exports = (message) => {
     if (!message.content.startsWith(prefix)) {
         return;
     }
-    const command = message.content.substring(1);
+    const command = message.content.split(' ')[0].substring(1);
     if (!commands.has(command)) {
         return;
     }

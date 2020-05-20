@@ -1,8 +1,8 @@
 module.exports = {
     name: 'ping',
-    desc: 'Pings the bot to ensure it is responsive.',
+    desc: 'Ping command',
     usage: '',
     run: (message) => {
-        message.reply('pong!');
+        message.reply('pong');
     },
 };

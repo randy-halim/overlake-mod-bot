@@ -6,8 +6,8 @@ module.exports = {
     run: (message) => {
         const embed = { title: 'Commands', fields:[] };
         commands.forEach((command) => {
-            const value = `${command.desc}`;
-            const name = `${prefix}${command.name} ${command.usage}`;
+            const value = `${command.desc}`; 
+            const name = `${prefix}${command.name} ${command.usage}`
             embed.fields.push({ name, value });
         });
         message.channel.send({ embed });
