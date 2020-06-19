@@ -1,0 +1,16 @@
+{
+  "name": "overlake-mod-bot",
+  "version": "v0.1",
+  "description": "Overlake Discord moderation bot",
+  "main": "index.js",
+  "repository": "https://github.com/randy-halim/overlake-mod-bot.git",
+  "author": "Randy H <randy.halim@outlook.com>",
+  "private": true,
+  "dependencies": {
+    "applicationinsights": "^1.7.6",
+    "discord.js": "^12.2.0",
+    "dotenv": "^8.2.0",
+    "moment": "^2.26.0",
+    "node-schedule": "^1.3.2"
+  }
+}
