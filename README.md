@@ -1,3 +1,6 @@
+# DEPRECIATION WARNING!
+We are moving to [https://github.com/randy-halim/overlake](randy-halim/overlake) for a centeralized system. Code from here is being ported to that repo.
+
 # overlake-mod-bot
 A moderation and management bot for Overlake's Discord server
 
